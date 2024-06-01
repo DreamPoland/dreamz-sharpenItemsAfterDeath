@@ -10,6 +10,7 @@ import org.bukkit.event.Listener
 import org.bukkit.event.entity.PlayerDeathEvent
 import org.bukkit.inventory.ItemStack
 import java.time.Duration
+import java.util.stream.Collectors
 
 class PlayerDeathController @Inject constructor(
     private val tasker: Tasker,
@@ -23,13 +24,11 @@ class PlayerDeathController @Inject constructor(
             return
         }
 
-        val killer = victim.killer
-        if (killer !is Player) {
-            return
-        }
-
         val drops: MutableList<ItemStack> = ArrayList(event.drops)
         event.drops.clear()
+
+        println("DEBUG ITEMKOW")
+        println(drops.stream().map { "${it.type.name} x${it.amount}" }.collect(Collectors.joining(", ")))
 
         val filteredDrops = drops.filter { it.type !in this.pluginConfig.ignoredItems }.toMutableList()
         filteredDrops.shuffle()

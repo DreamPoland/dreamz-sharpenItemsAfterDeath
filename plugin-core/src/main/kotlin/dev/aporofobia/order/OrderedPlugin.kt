@@ -18,6 +18,7 @@ import dev.aporofobia.order.command.handler.InvalidUsageHandlerImpl
 import dev.aporofobia.order.command.result.BukkitNoticeResolver
 import dev.aporofobia.order.config.MessageConfig
 import dev.aporofobia.order.config.PluginConfig
+import dev.aporofobia.order.controller.PlayerDeathController
 import eu.okaeri.configs.serdes.OkaeriSerdesPack
 import eu.okaeri.configs.serdes.SerdesRegistry
 import eu.okaeri.tasker.bukkit.BukkitTasker
@@ -51,6 +52,7 @@ class OrderedPlugin : DreamBukkitPlatform(), DreamBukkitConfig {
             componentService.isDebug = pluginConfig.debug
         }
 
+        componentService.registerComponent(PlayerDeathController::class)
         componentService.registerComponent(SharpenItemsCommand::class)
     }
 
