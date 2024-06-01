@@ -66,7 +66,7 @@ subprojects {
     }
 
     dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24")
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.0")
 
         /* General */
         val lombok = "1.18.32"
