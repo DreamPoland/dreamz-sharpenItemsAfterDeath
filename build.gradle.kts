@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.24"
+    id("org.jetbrains.kotlin.jvm") version "2.0.0"
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.papermc.paperweight.userdev") version "1.7.1" apply false
 }
