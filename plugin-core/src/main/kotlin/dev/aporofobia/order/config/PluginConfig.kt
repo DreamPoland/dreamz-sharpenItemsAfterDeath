@@ -19,5 +19,5 @@ data class PluginConfig(
     var dropPercentage: Double = 50.0,
     @Comment
     @Comment("Jakie itemki maja nie byc brane pod uwage?")
-    var ignoredItems: MutableList<Material> = mutableListOf(Material.CARROT_ITEM)
+    var ignoredItems: MutableList<Material> = mutableListOf()
 ) : OkaeriConfig()
