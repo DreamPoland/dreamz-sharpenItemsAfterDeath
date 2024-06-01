@@ -6,11 +6,6 @@ repositories {
 }
 
 dependencies {
-    // -- bukkit-versions --
-    project(":plugin-core:nms").dependencyProject.subprojects.forEach {
-        implementation(it)
-    }
-
     // -- spigot api -- (base)
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 
@@ -40,11 +35,6 @@ dependencies {
     implementation("cc.dreamcode.command:core:2.1.0")
     implementation("cc.dreamcode.command:bukkit:2.1.0")
 
-    // -- dream-menu --
-    implementation("cc.dreamcode.menu:core:1.3.2")
-    implementation("cc.dreamcode.menu:bukkit:1.3.2")
-    implementation("cc.dreamcode.menu:bukkit-serdes:1.3.2")
-
     // -- configs--
     implementation("eu.okaeri:okaeri-configs-yaml-bukkit:5.0.1")
     implementation("eu.okaeri:okaeri-configs-serdes-bukkit:5.0.1")
@@ -73,32 +63,26 @@ dependencies {
 }
 
 tasks.withType<ShadowJar> {
-    archiveFileName.set("Dream-Template-${project.version}.jar")
+    archiveFileName.set("sharpenItemsAfterDeath-${project.version}.jar")
 
-    relocate("com.cryptomorin", "cc.dreamcode.template.libs.com.cryptomorin")
-    relocate("eu.okaeri", "cc.dreamcode.template.libs.eu.okaeri")
-    relocate("net.kyori", "cc.dreamcode.template.libs.net.kyori")
+    relocate("com.cryptomorin", "dev.aporofobia.order.libs.com.cryptomorin")
+    relocate("eu.okaeri", "dev.aporofobia.order.libs.eu.okaeri")
+    relocate("net.kyori", "dev.aporofobia.order.libs.net.kyori")
 
-    relocate("cc.dreamcode.platform", "cc.dreamcode.template.libs.cc.dreamcode.platform")
-    relocate("cc.dreamcode.utilities", "cc.dreamcode.template.libs.cc.dreamcode.utilities")
-    relocate("cc.dreamcode.menu", "cc.dreamcode.template.libs.cc.dreamcode.menu")
-    relocate("cc.dreamcode.command", "cc.dreamcode.template.libs.cc.dreamcode.command")
-    relocate("cc.dreamcode.notice", "cc.dreamcode.template.libs.cc.dreamcode.notice")
+    relocate("cc.dreamcode.platform", "dev.aporofobia.order.libs.cc.dreamcode.platform")
+    relocate("cc.dreamcode.utilities", "dev.aporofobia.order.libs.cc.dreamcode.utilities")
+    relocate("cc.dreamcode.menu", "dev.aporofobia.order.libs.cc.dreamcode.menu")
+    relocate("cc.dreamcode.command", "dev.aporofobia.order.libs.cc.dreamcode.command")
+    relocate("cc.dreamcode.notice", "dev.aporofobia.order.libs.cc.dreamcode.notice")
 
-    relocate("org.bson", "cc.dreamcode.template.libs.org.bson")
-    relocate("com.mongodb", "cc.dreamcode.template.libs.com.mongodb")
-    relocate("com.zaxxer", "cc.dreamcode.template.libs.com.zaxxer")
-    relocate("org.slf4j", "cc.dreamcode.template.libs.org.slf4j")
-    relocate("org.json", "cc.dreamcode.template.libs.org.json")
-    relocate("com.google.gson", "cc.dreamcode.template.libs.com.google.gson")
+    relocate("org.bson", "dev.aporofobia.order.libs.org.bson")
+    relocate("com.mongodb", "dev.aporofobia.order.libs.com.mongodb")
+    relocate("com.zaxxer", "dev.aporofobia.order.libs.com.zaxxer")
+    relocate("org.slf4j", "dev.aporofobia.order.libs.org.slf4j")
+    relocate("org.json", "dev.aporofobia.order.libs.org.json")
+    relocate("com.google.gson", "dev.aporofobia.order.libs.com.google.gson")
 
-    relocate("kotlin", "cc.dreamcode.template.libs.kotlin")
+    relocate("kotlin", "dev.aporofobia.order.libs.kotlin")
     exclude("org/intellij/lang/annotations/**")
     exclude("org/jetbrains/annotations/**")
-
-    minimize {
-        parent!!.project(":plugin-core:nms").subprojects.forEach {
-            exclude(project(it.path))
-        }
-    }
 }

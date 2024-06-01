@@ -7,8 +7,8 @@ plugins {
 }
 
 allprojects {
-    group = "cc.dreamcode.template"
-    version = "1.0-InDEV"
+    group = "dev.aporofobia.order"
+    version = "1.0.1"
 
     apply(plugin = "kotlin")
     apply(plugin = "com.github.johnrengelman.shadow")
@@ -21,28 +21,6 @@ allprojects {
 }
 
 subprojects {
-    if (name.startsWith("v") &&
-        (name.split("_").getOrNull(1)?.toInt() ?: 0) >= 17
-    ) {
-        apply(plugin = "io.papermc.paperweight.userdev")
-
-        java {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
-
-            withSourcesJar()
-            withJavadocJar()
-        }
-
-        tasks.withType<KotlinCompile> {
-            kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_17.toString()
-                languageVersion = "1.8"
-                javaParameters = true
-            }
-        }
-    }
-    else {
         java {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
@@ -58,7 +36,6 @@ subprojects {
                 javaParameters = true
             }
         }
-    }
 
     tasks.withType<JavaCompile> {
         options.encoding = "UTF-8"
