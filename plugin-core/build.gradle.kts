@@ -69,7 +69,7 @@ dependencies {
     implementation("eu.okaeri:okaeri-tasker-bukkit:2.1.0-beta.3")
 
     // -- Multi-Version Items helper --
-    implementation("com.github.cryptomorin:XSeries:9.10.0")
+    implementation("com.github.cryptomorin:XSeries:10.0.0")
 }
 
 tasks.withType<ShadowJar> {
