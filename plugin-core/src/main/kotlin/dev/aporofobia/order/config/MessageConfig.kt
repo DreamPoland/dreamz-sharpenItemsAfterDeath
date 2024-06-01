@@ -19,9 +19,15 @@ data class MessageConfig(
     @CustomKey("command-usage-help")
     var usagePath: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&f{usage} &8- &7{description}"),
     @CustomKey("command-usage-not-found")
-    var usageNotFound: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cNie znaleziono pasujacych do kryteriow komendy."),
+    var usageNotFound: BukkitNotice = BukkitNotice(
+        NoticeType.CHAT,
+        "&cNie znaleziono pasujacych do kryteriow komendy."
+    ),
     @CustomKey("command-path-not-found")
-    var pathNotFound: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cTa komenda jest pusta lub nie posiadasz dostepu do niej."),
+    var pathNotFound: BukkitNotice = BukkitNotice(
+        NoticeType.CHAT,
+        "&cTa komenda jest pusta lub nie posiadasz dostepu do niej."
+    ),
     @CustomKey("command-no-permission")
     var noPermission: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cNie posiadasz uprawnien."),
     @CustomKey("command-not-player")
@@ -29,7 +35,10 @@ data class MessageConfig(
     @CustomKey("command-not-console")
     var notConsole: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cTa komende mozna tylko wykonac z poziomu konsoli."),
     @CustomKey("command-invalid-format")
-    var invalidFormat: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cPodano nieprawidlowy format argumentu komendy. ({input})"),
+    var invalidFormat: BukkitNotice = BukkitNotice(
+        NoticeType.CHAT,
+        "&cPodano nieprawidlowy format argumentu komendy. ({input})"
+    ),
     @CustomKey("player-not-found")
     var playerNotFound: BukkitNotice = BukkitNotice(NoticeType.CHAT, "&cPodanego gracza nie znaleziono."),
     @CustomKey("config-reloaded")

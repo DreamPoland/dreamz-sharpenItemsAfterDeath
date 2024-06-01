@@ -15,7 +15,6 @@ dependencies {
     implementation("cc.dreamcode.platform:bukkit:1.12.4")
     implementation("cc.dreamcode.platform:bukkit-config:1.12.4")
     implementation("cc.dreamcode.platform:dream-command:1.12.4")
-    implementation("cc.dreamcode.platform:persistence:1.12.4")
 
     // -- dream-utilities --
     implementation("cc.dreamcode:utilities:1.4.1")
@@ -40,11 +39,6 @@ dependencies {
     implementation("eu.okaeri:okaeri-configs-serdes-bukkit:5.0.1")
     implementation("eu.okaeri:okaeri-configs-serdes-commons:5.0.1")
 
-    // -- persistence data --
-    implementation("eu.okaeri:okaeri-persistence-flat:2.0.3")
-    implementation("eu.okaeri:okaeri-persistence-jdbc:2.0.3")
-    implementation("eu.okaeri:okaeri-persistence-mongo:2.0.3")
-
     // -- persistence data configure --
     implementation("eu.okaeri:okaeri-configs-json-gson:5.0.1")
     implementation("eu.okaeri:okaeri-configs-json-simple:5.0.1")
@@ -57,9 +51,6 @@ dependencies {
 
     // -- tasker (easy sync/async scheduler) --
     implementation("eu.okaeri:okaeri-tasker-bukkit:2.1.0-beta.3")
-
-    // -- Multi-Version Items helper --
-    implementation("com.github.cryptomorin:XSeries:9.10.0")
 }
 
 tasks.withType<ShadowJar> {
