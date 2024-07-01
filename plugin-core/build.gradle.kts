@@ -24,8 +24,8 @@ dependencies {
     implementation("cc.dreamcode.notice:core:1.5.1")
     implementation("cc.dreamcode.notice:minecraft:1.5.1")
     implementation("cc.dreamcode.notice:minecraft-adventure:1.5.1")
-    implementation("cc.dreamcode.notice:bukkit-adventure:1.5.1")
-    implementation("cc.dreamcode.notice:bukkit-adventure-serializer:1.5.1")
+    implementation("cc.dreamcode.notice:bukkit-adventure:1.5.5")
+    implementation("cc.dreamcode.notice:bukkit-adventure-serializer:1.5.5")
 
     // -- notice mini-messages --
     compileOnly("net.kyori:adventure-text-minimessage:4.16.0")
